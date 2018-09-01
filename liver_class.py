@@ -6,7 +6,7 @@ from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 
 
-class LiverDesies:
+class LiverDisease:
     def __init__(self):
         self.__is_model_existed = False
         self.__data = None
