@@ -1,4 +1,4 @@
-from liver_class import LiverDesies
+from liver_class import LiverDisease
 
 liver_obj = LiverDesies()
 
