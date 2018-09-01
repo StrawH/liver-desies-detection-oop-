@@ -1,6 +1,6 @@
 from liver_class import LiverDisease
 
-liver_obj = LiverDesies()
+liver_obj = LiverDisease()
 
 liver_obj.load_data_set('liver_data_set.csv')
 
