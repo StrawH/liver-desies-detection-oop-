@@ -8,7 +8,7 @@ liver_obj.train(.1)
 
 liver_obj.print_classification_result()
 
-liver_obj.predict([17,0,0.7,0.2,145,18,36,7.2,3.9,1.18])
+liver_obj.predict([])
 
 
 
