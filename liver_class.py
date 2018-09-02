@@ -6,7 +6,7 @@ from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 
 
-class LiverDisease:
+class LiverDesies:
     def __init__(self):
         self.__is_model_existed = False
         self.__data = None
@@ -16,6 +16,7 @@ class LiverDisease:
         if os.path.isfile('Liverdetect.model'):
             self.__model = pickle.load(open("Liverdetect.model",'rb'))
             self.__is_model_existed = True
+            print("the model is uploaded")
 
     def load_data_set (self, datset_name ):
 
@@ -24,6 +25,7 @@ class LiverDisease:
 
 
         self.__data = pd.read_csv(datset_name)
+        print("data set is loaded")
 
 
 
@@ -46,7 +48,7 @@ class LiverDisease:
         pickle.dump(self.__model,open('Liverdetect.model','wb'))
         self.__is_model_existed = True
 
-        print('*'*20 + "training done" +'*'*20)
+        print("training is done and the model is saved" )
 
 
 
@@ -59,12 +61,15 @@ class LiverDisease:
     def predict (self , feature):
         Data_frame = pd.DataFrame(self.__data)
         headers_number = list(Data_frame.keys()).__len__()
-        fet_no =feature.__len__()     # features number of input data
+        fet_no = feature.__len__()  # features number of input data
+
+        if self.__is_model_existed is True :
+            headers_number = 10
 
         if not self.__is_model_existed  is True :
             raise ValueError ("tha model is not trained yet")
 
-        elif not fet_no == headers_number :
+        if not fet_no == headers_number :
             raise ValueError ("features are not correct")
 
         if self.__model.predict([feature]) == 0:
@@ -72,4 +77,6 @@ class LiverDisease:
 
         else:
             print("the predicted result : patient have a liver desies")
+
+
 
