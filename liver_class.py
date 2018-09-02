@@ -56,10 +56,10 @@ class LiverDisease:
         print(result)
 
 
-    def predict (self , feture):
+    def predict (self , feature):
         Data_frame = pd.DataFrame(self.__data)
         headers_number = list(Data_frame.keys()).__len__()
-        fet_no =feture.__len__()     # features number of input data
+        fet_no =feature.__len__()     # features number of input data
 
         if not self.__is_model_existed  is True :
             raise ValueError ("tha model is not trained yet")
@@ -67,7 +67,7 @@ class LiverDisease:
         elif not fet_no == headers_number :
             raise ValueError ("features are not correct")
 
-        if self.__model.predict([feture]) == 0:
+        if self.__model.predict([feature]) == 0:
             print("the predicted result : patient dosen't have a liver desies")
 
         else:
