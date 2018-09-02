@@ -68,9 +68,8 @@ class LiverDisease:
             raise ValueError ("features are not correct")
 
         if self.__model.predict([feture]) == 0:
-            print("the predicted result : patient dosen't have liver desies")
+            print("the predicted result : patient dosen't have a liver desies")
 
         else:
-            print("the predicted result : patient dosen't have liver desies")
+            print("the predicted result : patient have a liver desies")
 
-        # result if [0] == print('good') else print("is patient ")
