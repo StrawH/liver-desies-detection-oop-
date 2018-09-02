@@ -1,15 +1,19 @@
-from liver_class import LiverDisease
+#load the model class
+from liver_class import LiverDesies
 
-liver_obj = LiverDisease()
+liver_model = LiverDesies()
 
-liver_obj.load_data_set('liver_data_set.csv')
+#upload data set file 
+liver_model.load_data_set('liver_data_set.csv')
 
-liver_obj.train(.1)
+#train your model with part of ypur data set , default = .2 or 20%
+liver_model.train(.2)       
 
-liver_obj.print_classification_result()
+#print the accuracy of the model 
+liver_model.print_classification_result()
 
-liver_obj.predict([])
-
+#use the model with new data 
+liver_model.predict([])
 
 
 
